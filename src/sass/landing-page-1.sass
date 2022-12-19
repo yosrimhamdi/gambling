@@ -26,12 +26,14 @@
         @include breakpoint('medium')
             top: initial
             bottom: 0
-            left: 2em
+            left: 100px
             transform: initial
+            transform: translateY(10px)
 
         p
             font-size: 2rem
             margin-right: 8em
+            font-weight: 700
             display: none
 
             @include breakpoint('medium')
@@ -40,8 +42,30 @@
         button
             color: var(--yellow)
             background-color: black
-            padding: 1em 4em
+            padding: 1em 2em
             border: none
+            cursor: pointer
+            display: block
+
+            @include breakpoint('medium')
+                font-size: 1.5rem
+                padding: 1em 5.5em
+
+
+            span
+                font-size: 1.2rem
+
+            &::after
+                content: ''
+                margin-left: 1em
+                border-top: 2px solid var(--purple)
+                border-right: 2px solid var(--purple)
+                width: 20px
+                height: 10px
+                display: none
+
+                @include breakpoint('medium')
+                    display: inline-block
 
     &__image-container
         flex-basis: 80%
@@ -53,7 +77,7 @@
 
         @include breakpoint('medium')
             order: 1
-            min-height: 70vh
+            min-height: 80vh
             margin-bottom: 0
     
     &__form-wrapper
@@ -64,7 +88,8 @@
         text-align: center
 
     input, &__collect-button
-        width: 200px
+        width: 250px
+        height: 45px
     
     input
         display: block
@@ -72,6 +97,8 @@
         margin-bottom: 1em
         border: 2px solid black
         padding: .6em 1em
+        font-size: .9rem
+        outline: none
 
     &__collect-button
         background-color: var(--yellow)
@@ -82,6 +109,7 @@
 
     &__title
         margin-bottom: .2em
+        font-size: 2.1rem
     
     &__price
         color: var(--purple)
@@ -90,9 +118,11 @@
 
     &__sub-title
         color: var(--purple)
+        font-size: 1.7rem
 
     &__sub-sub-title
         margin-bottom: 1em
+        font-size: 1.7rem
 
 .footer
     color: #7A8191
@@ -109,10 +139,23 @@
         margin-right: auto
 
     &__mg-icons
-        text-align: center
+        display: flex
+        align-items: center
+        justify-content: center
 
         @include breakpoint('medium')
-            text-align: left
+            justify-content: flex-start
+
+        img
+            margin-right: .5em
+            
+            @include breakpoint('medium')
+                margin-right: 1.2em
+
+
+    &__text
+        flex-basis: 70%
+        text-align: justify
 
     &__social-icons
         color: #B10F2E
@@ -120,7 +163,8 @@
         margin-top: 2em
         justify-content: center
 
-        @include breakpoint('mediumn')
+        @include breakpoint('medium')
+            margin-left: auto
             justify-content: flex-end
 
         i
