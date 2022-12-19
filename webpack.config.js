@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   entry: {
     'landing-page-1': '/src/sass/landing-page-1.sass',
+    'landing-page-2': '/src/sass/landing-page-2.sass',
   },
   output: {
     path: __dirname + '/dist/',

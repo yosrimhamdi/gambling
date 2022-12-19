@@ -1,0 +1,82 @@
+@use './utils/breakpoint' as *
+@forward './index'
+
+body
+    font-family: 'Roboto', monospace
+
+.hero-section
+    display: flex
+    flex-direction: column
+    position: relative
+    height: 100vh
+
+
+    @include breakpoint('medium')
+        flex-direction: row
+
+    img
+        display: blocks
+        width :100%
+
+    &__image-container
+        flex-basis: 90%
+        order: -1
+        background-image: url('/src/images/lp2-hero.jpg')
+        background-size: cover
+        background-position: center
+        max-height: 200px
+        margin-bottom: 1.5em
+
+        @include breakpoint('medium')
+            margin-bottom: 0
+            background-image: url('/src/images/lp2-hero-curved.png')
+            background-position: right center
+            order: 1
+            min-height: 100%
+            margin-bottom: 0
+    
+    &__form-wrapper
+        padding: 0 2em
+        display: flex
+        align-items: center
+        justify-content: center
+        text-align: center
+
+    input, &__collect-button
+        width: 250px
+        height: 45px
+        border-radius: 5px
+    
+    input
+        display: block
+        margin: 0 auto
+        margin-bottom: 1em
+        border: 2px solid black
+        padding: .6em 1em
+        font-size: .9rem
+        outline: none
+
+    &__collect-button
+        background-color: var(--green)
+        border: none
+        padding: 1em 0
+        font-weight: 600
+        cursor: pointer
+        color: white
+
+    &__title
+        margin-bottom: .2em
+        font-size: 2.1rem
+    
+    &__price
+        color: var(--green)
+        font-size: 3rem
+        margin-bottom: .5rem
+
+    &__sub-title
+        color: var(--green)
+        font-size: 1.7rem
+
+    &__sub-sub-title
+        margin-bottom: 1em
+        font-size: 1.7rem
