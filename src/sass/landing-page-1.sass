@@ -1,0 +1,139 @@
+@use './utils/breakpoint' as *
+@forward './index'
+
+.hero-section
+    display: flex
+    flex-direction: column
+    position: relative
+
+    @include breakpoint('medium')
+        margin-top: 3em
+        flex-direction: row
+
+    img
+        display: blocks
+        width :100%
+
+    &__signup
+        position: absolute
+        top: calc(30vh - 20px)
+        left: 50%
+        transform: translateX(-50%)
+        display: flex
+        align-items: center
+        white-space: nowrap
+
+        @include breakpoint('medium')
+            top: initial
+            bottom: 0
+            left: 2em
+            transform: initial
+
+        p
+            font-size: 2rem
+            margin-right: 4em
+            display: none
+
+            @include breakpoint('medium')
+                display: block 
+
+        button
+            color: var(--yellow)
+            background-color: black
+            padding: 1em 4em
+            border: none
+
+    &__image-container
+        flex-basis: 80%
+        order: -1
+        background-image: url('/src/images/lp1-hero.jpg')
+        background-size: cover
+        min-height: 30vh
+        margin-bottom: 2em
+
+        @include breakpoint('medium')
+            order: 1
+            min-height: 70vh
+            margin-bottom: 0
+    
+    &__form-wrapper
+        padding: 0 2em
+        display: flex
+        align-items: center
+        justify-content: center
+        text-align: center
+
+    input, &__collect-button
+        width: 200px
+    
+    input
+        display: block
+        margin: 0 auto
+        margin-bottom: 1em
+        border: 2px solid black
+        padding: .6em 1em
+
+    &__collect-button
+        background-color: var(--yellow)
+        border: none
+        padding: 1em 0
+        font-weight: 600
+        cursor: pointer
+
+    &__title
+        margin-bottom: .2em
+    
+    &__price
+        color: var(--purple)
+        font-size: 3rem
+        margin-bottom: .5rem
+
+    &__sub-title
+        color: var(--purple)
+
+    &__sub-sub-title
+        margin-bottom: 1em
+
+.footer
+    color: #7A8191
+    display: flex
+    flex-direction: column
+    margin-top: 2em
+    margin-bottom: 4em
+    padding: 0 1em
+
+    @include breakpoint('medium')
+        flex-direction: row
+        width: 90%
+        margin: 0 auto
+
+    &__mg-icons
+        text-align: center
+
+        @include breakpoint('medium')
+            text-align: left
+
+    &__social-icons
+        color: #B10F2E
+        display: flex
+        margin-top: 2em
+        justify-content: center
+
+        @include breakpoint('mediumn')
+            justify-content: flex-end
+
+        i
+            display: inline-block
+            font-size: 2.5rem
+            margin-right: .3em
+
+    &__links
+        margin-bottom: 1em
+        margin-top: 2em
+        
+        a
+            color: inherit
+            text-decoration: none
+            padding-right: .5em
+        a:not(:last-child)
+            border-right: 1px solid #7A8191
