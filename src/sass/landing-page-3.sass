@@ -1,0 +1,105 @@
+@use './utils/breakpoint' as *
+@forward './index'
+
+:root
+    @include breakpoint('laptop-l')
+        font-size: 18.5px
+
+body
+    font-family: 'TT Norms Pro', sans-serif
+    height: 100vh
+    background-image: url('/src/images/lp3-hero.jpg')
+    background-size: cover
+    position: relative
+    background-position: center
+
+.hero-section
+    background-color: #fff
+    position: absolute
+    top: 50%
+    right: 0
+    transform: translate(-50%, -50%)
+    width: 500px
+    height: 500px
+    border-radius: 50%
+
+    &__form-wrapper
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+    
+        padding: 0 2em
+        display: flex
+        align-items: center
+        justify-content: center
+        text-align: center
+
+    input, &__collect-button
+        width: 250px
+        height: 45px
+        border-radius: 5px
+    
+    input
+        display: block
+        margin: 0 auto
+        margin-bottom: 1em
+        border: 2px solid black
+        padding: .6em 1em
+        font-size: .9rem
+        outline: none
+
+    &__collect-button
+        background-color: var(--red)
+        border: none
+        padding: 1.7rem 0
+        font-weight: 600
+        cursor: pointer
+        color: white
+        font-size: 2rem
+        border-radius: 20px
+        display: inline-flex
+        align-items: center
+        justify-content: center 
+
+    &__title
+        margin-bottom: .2em
+        font-size: 1rem
+        font-weight: 400
+    
+    &__price
+        color: var(--red)
+        font-size: 3rem
+        margin-bottom: .5rem
+
+    &__sub-title
+        color: var(--red)
+        font-size: 1.9rem
+        white-space: nowrap
+
+    &__sub-sub-title
+        margin-bottom: 1em
+        font-size: 1.9rem
+        white-space: nowrap
+
+
+.items
+    color: white
+    position: absolute
+    bottom: 0
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: space-around
+    gap: 2em
+    background-color: rgba(177, 15, 45, 0.6)
+
+
+.item
+    display: flex
+    opacity: 1 !important
+    align-items: center
+
+    .number
+        font-size: 5rem
+        margin-right: .5rem

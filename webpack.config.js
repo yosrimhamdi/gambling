@@ -5,6 +5,7 @@ module.exports = {
   entry: {
     'landing-page-1': '/src/sass/landing-page-1.sass',
     'landing-page-2': '/src/sass/landing-page-2.sass',
+    'landing-page-3': '/src/sass/landing-page-3.sass',
   },
   output: {
     path: __dirname + '/dist/',
