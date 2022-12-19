@@ -4,6 +4,10 @@
 body
     font-family: 'Roboto', monospace
 
+:root
+    @include breakpoint('laptop-l')
+        font-size: 18.5px
+
 .hero-section
     display: flex
     flex-direction: column
@@ -57,7 +61,7 @@ body
         outline: none
 
     &__collect-button
-        background-color: var(--green)
+        background: linear-gradient(to right, #91B113, #B7E717)
         border: none
         padding: 1em 0
         font-weight: 600
