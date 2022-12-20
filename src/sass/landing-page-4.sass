@@ -1,0 +1,208 @@
+@use './utils/breakpoint' as *
+@forward './index'
+
+:root
+    @include breakpoint('laptop-l')
+        font-size: 18.5px
+
+body
+    font-family: 'TT Norms Pro', sans-serif
+
+.content
+    background-image: url('/src/images/lp4-hero.jpg')
+    background-size: cover
+    background-position: 30% 10%
+    background-repeat: no-repeat
+    position: relative
+
+    @include breakpoint('small')
+        height: 100vh
+        
+    @include breakpoint('medium')
+        background-position: center
+
+
+.hero-section
+    width: 90%
+    margin: 0 auto
+    padding: 2em 0
+    margin-bottom: 2em
+    margin-top: 2em
+    color: white
+
+    @include breakpoint('medium')
+        position: absolute
+        top: 40%
+        right: 50%
+        transform: translate(0, -50%)
+        left: 0
+
+    @include breakpoint('laptop')
+        width: 1000px
+
+    &__form-wrapper
+        padding: 0 2em
+        display: flex
+        align-items: center
+        justify-content: center
+        text-align: center
+
+        @include breakpoint('laptop')
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)    
+
+
+    input, &__collect-button
+        width: 250px
+        height: 45px
+        border-radius: 5px
+    
+    input
+        display: block
+        margin: 0 auto
+        margin-bottom: 1em
+        border: 2px solid black
+        padding: .6em 1em
+        font-size: .9rem
+        outline: none
+
+    &__collect-button
+        background: transparent linear-gradient(79deg, #F90552 0%, #F78905 100%) 0% 0% no-repeat padding-box
+        border: none
+        padding: 1.7rem 5em
+        white-space: nowrap
+        font-weight: 600
+        cursor: pointer
+        color: white
+        font-size: 2rem
+        border-radius: 4px
+        display: inline-flex
+        align-items: center
+        justify-content: center 
+
+    &__title
+        margin-bottom: .2em
+    
+    &__price
+        color: var(--lp-4)
+        font-size: 3rem
+        margin-bottom: .5rem
+
+    &__sub-title
+        color: var(--lp-4)
+        font-size: 1.9rem
+        white-space: nowrap
+
+    &__sub-sub-title
+        margin-bottom: 1em
+        font-size: 1.9rem
+        white-space: nowrap
+
+
+.items
+    color: white
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    gap: 2em
+    background-color: black
+    padding: .5em 1em
+    flex-wrap: wrap
+
+    @include breakpoint('small')
+        position: absolute
+        bottom: 0
+        justify-content: space-around
+
+.item
+    display: flex
+    opacity: 1 !important
+    align-items: center
+
+    .number
+        font-size: 5rem
+        margin-right: .5rem
+
+.pop-up
+    display: none
+    background-color: white
+    text-align: center
+    color: white
+    border-radius: 10px
+    padding: 2em 1em
+    margin-bottom: 2em
+
+    @include breakpoint('small')
+        position: absolute
+        transform: translate(-50%, -50%)
+        padding: 2em 4em
+        width: auto
+        left: 50%
+        top: 45%
+        width: 500px
+
+    @include breakpoint('laptop')
+        width: 600px
+
+    .fa-xmark
+        font-size: 1.5rem
+        position: absolute
+        top: 10px
+        right: 20px
+        color: #707070
+        cursor: pointer
+
+    &__headline
+        margin-bottom: .5em
+        margin-top: .5em
+        color: #F90552
+
+    &__description
+        margin-bottom: 1em
+        font-size: 1.2rem
+        color: #FF5050
+
+    input[type='text']
+        display: block
+        margin: 0 auto
+        border: 1px solid #F8800B
+        outline: none
+        padding: 1em 2em
+        border-radius:  10px
+        margin-bottom: 1.5em
+        width: 100%
+
+        @include breakpoint('laptop')
+            max-width: 400px
+    
+    button
+        color: var(--red)
+        border: none
+        background: transparent linear-gradient(79deg, #F90552 0%, #F78905 100%) 0% 0% no-repeat padding-box
+        font-size: 2rem
+        font-weight: 800
+        padding: 1rem
+        border-radius: 15px
+        margin-bottom: 2rem
+        cursor: pointer
+        color: white
+    
+    &__radios
+        margin: 0 auto
+        color: #745A5A
+
+        > div
+            display: flex
+            justify-content: center
+            align-items: flex-start
+            margin-bottom: 1em
+
+        input
+            position: relative
+            cursor: pointer
+            top: 5px
+            margin-right: 2em
+    

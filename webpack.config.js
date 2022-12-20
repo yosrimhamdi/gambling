@@ -5,10 +5,9 @@ module.exports = {
   entry: {
     'landing-page-1': '/src/sass/landing-page-1.sass',
     'landing-page-2': '/src/sass/landing-page-2.sass',
-    'landing-page-3': [
-      '/src/sass/landing-page-3.sass',
-      '/src/js/landing-page-3.js',
-    ],
+    'landing-page-3': '/src/sass/landing-page-3.sass',
+    'landing-page-4': '/src/sass/landing-page-4.sass',
+    'toggle-popup': '/src/js/toggle-popup.js',
   },
   output: {
     path: __dirname + '/dist/',
