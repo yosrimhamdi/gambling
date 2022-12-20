@@ -6,7 +6,7 @@
     "bs": "browser-sync start --config bs.js",
     "webpack": "NODE_ENV=development webpack serve",
     "start": "npm-run-all -p bs webpack",
-    "build": "NODE_ENV=production webpack"
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
