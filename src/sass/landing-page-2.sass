@@ -12,10 +12,9 @@ body
     display: flex
     flex-direction: column
     position: relative
-    height: 100vh
-
 
     @include breakpoint('medium')
+        height: 100vh
         flex-direction: row
 
     img
@@ -28,7 +27,7 @@ body
         background-image: url('/src/images/lp2-hero.jpg')
         background-size: cover
         background-position: center
-        max-height: 200px
+        min-height: 200px
         margin-bottom: 1.5em
 
         @include breakpoint('medium')

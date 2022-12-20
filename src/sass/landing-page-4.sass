@@ -145,7 +145,7 @@ body
         width: 500px
 
     @include breakpoint('laptop')
-        width: 600px
+        width: 800px
 
     .fa-xmark
         font-size: 1.5rem
@@ -167,16 +167,12 @@ body
 
     input[type='text']
         display: block
-        margin: 0 auto
-        border: 1px solid #F8800B
+        border: 3px solid #F8800B
         outline: none
-        padding: 1em 2em
-        border-radius:  10px
-        margin-bottom: 1.5em
-        width: 100%
-
-        @include breakpoint('laptop')
-            max-width: 400px
+        padding: 1.4em 2em
+        margin: 0 auto
+        margin-bottom: 2.3em
+        width: 90%
     
     button
         color: var(--red)
@@ -184,8 +180,7 @@ body
         background: transparent linear-gradient(79deg, #F90552 0%, #F78905 100%) 0% 0% no-repeat padding-box
         font-size: 2rem
         font-weight: 800
-        padding: 1rem
-        border-radius: 15px
+        padding: 1rem 1.5em
         margin-bottom: 2rem
         cursor: pointer
         color: white
@@ -193,12 +188,19 @@ body
     &__radios
         margin: 0 auto
         color: #745A5A
+        text-align: left
+
+        @include breakpoint('medium')
+            width: 80%
+            margin-right: auto
+            margin-left: 3em
 
         > div
             display: flex
-            justify-content: center
+            justify-content: flex-start
             align-items: flex-start
             margin-bottom: 1em
+            font-size: .9rem
 
         input
             position: relative

@@ -7,13 +7,15 @@
 
 body
     font-family: 'TT Norms Pro', sans-serif
+
+.container
     background-image: url('/src/images/lp3-hero.jpg')
     background-size: cover
     background-position: 30% 10%
     background-repeat: no-repeat
-    background-attachment: fixed
 
-    @include breakpoint('medium')
+    @include breakpoint('small')
+        min-height: 100vh
         background-position: center
 
 .hero-section
@@ -24,10 +26,10 @@ body
     margin-bottom: 2em
     margin-top: 2em
 
-    @include breakpoint('medium')
+    @include breakpoint('small')
         position: absolute
-        top: 30%
-        left:50%
+        top: 40%
+        left: 50%
         transform: translate(-50%, -50%)
         box-shadow: inset 0px 0px 6px #0000004D
 
@@ -144,7 +146,7 @@ body
         width: 500px
 
     @include breakpoint('laptop')
-        width: 600px
+        width: 740px
 
     .fa-xmark
         font-size: 1.5rem
@@ -167,13 +169,13 @@ body
         margin: 0 auto
         border: none
         outline: none
-        padding: 1em 2em
-        border-radius:  10px
-        margin-bottom: 1.5em
+        padding: 1.4em 2em
+        border-radius:  20px
+        margin-bottom: 2.5em
         width: 100%
 
         @include breakpoint('laptop')
-            max-width: 400px
+            max-width: 600px
     
     button
         color: var(--red)
@@ -189,11 +191,17 @@ body
     &__radios
         margin: 0 auto
 
+        @include breakpoint('medium')
+            width: 80%
+            margin-right: auto
+            margin-left: 3em
+
         > div
             display: flex
-            justify-content: center
+            justify-content: flex-start
             align-items: flex-start
             margin-bottom: 1em
+            font-size: .9rem
 
         input
             position: relative
