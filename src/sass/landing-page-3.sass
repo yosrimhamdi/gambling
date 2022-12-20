@@ -7,33 +7,50 @@
 
 body
     font-family: 'TT Norms Pro', sans-serif
-    height: 100vh
     background-image: url('/src/images/lp3-hero.jpg')
     background-size: cover
-    position: relative
-    background-position: center
+    background-position: 30% 10%
+    background-repeat: no-repeat
+    background-attachment: fixed
+
+    @include breakpoint('medium')
+        background-position: center
 
 .hero-section
     background-color: #fff
-    position: absolute
-    top: 50%
-    right: 0
-    transform: translate(-50%, -50%)
-    width: 500px
-    height: 500px
-    border-radius: 50%
+    width: 90%
+    margin: 0 auto
+    padding: 2em 0
+    margin-bottom: 2em
+    margin-top: 2em
+
+    @include breakpoint('medium')
+        position: absolute
+        top: 30%
+        left:50%
+        transform: translate(-50%, -50%)
+        box-shadow: inset 0px 0px 6px #0000004D
+
+    @include breakpoint('laptop')
+        right: 0
+        left: initial
+        width: 500px
+        height: 500px
+        border-radius: 50%
 
     &__form-wrapper
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translate(-50%, -50%)
-    
         padding: 0 2em
         display: flex
         align-items: center
         justify-content: center
         text-align: center
+
+        @include breakpoint('laptop')
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)    
+
 
     input, &__collect-button
         width: 250px
@@ -85,15 +102,19 @@ body
 
 .items
     color: white
-    position: absolute
-    bottom: 0
     width: 100%
     display: flex
     align-items: center
-    justify-content: space-around
+    justify-content: flex-start
     gap: 2em
     background-color: rgba(177, 15, 45, 0.6)
+    padding: .5em 1em
+    flex-wrap: wrap
 
+    @include breakpoint('small')
+        position: absolute
+        bottom: 0
+        justify-content: space-around
 
 .item
     display: flex
@@ -103,3 +124,80 @@ body
     .number
         font-size: 5rem
         margin-right: .5rem
+
+.pop-up
+    display: none
+    background-color: var(--red)
+    text-align: center
+    color: white
+    border-radius: 10px
+    padding: 2em 1em
+    margin-bottom: 2em
+
+    @include breakpoint('small')
+        position: absolute
+        transform: translate(-50%, -50%)
+        padding: 2em 4em
+        width: auto
+        left: 50%
+        top: 45%
+        width: 500px
+
+    @include breakpoint('laptop')
+        width: 600px
+
+    .fa-xmark
+        font-size: 1.5rem
+        position: absolute
+        top: 10px
+        right: 20px
+        color: white
+        cursor: pointer
+
+    &__headline
+        margin-bottom: .5em
+        margin-top: .5em
+
+    &__description
+        margin-bottom: 1em
+        font-size: 1.2rem
+
+    input[type='text']
+        display: block
+        margin: 0 auto
+        border: none
+        outline: none
+        padding: 1em 2em
+        border-radius:  10px
+        margin-bottom: 1.5em
+        width: 100%
+
+        @include breakpoint('laptop')
+            max-width: 400px
+    
+    button
+        color: var(--red)
+        border: none
+        background-color: #fff
+        font-size: 2rem
+        font-weight: 800
+        padding: 1rem
+        border-radius: 15px
+        margin-bottom: 2rem
+        cursor: pointer
+    
+    &__radios
+        margin: 0 auto
+
+        > div
+            display: flex
+            justify-content: center
+            align-items: flex-start
+            margin-bottom: 1em
+
+        input
+            position: relative
+            cursor: pointer
+            top: 5px
+            margin-right: 2em
+    
