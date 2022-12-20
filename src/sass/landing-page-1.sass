@@ -15,73 +15,48 @@ body
 
     img
         display: blocks
-        width :100%
+        width: 100%
 
-    &__signup
-        position: absolute
-        top: calc(30vh - 20px)
-        left: 50%
-        transform: translateX(-50%)
-        display: flex
-        align-items: center
-        white-space: nowrap
-
-        @include breakpoint('medium')
-            top: initial
-            bottom: 0
-            left: 100px
-            transform: initial
-
-        p
-            font-size: 2rem
-            margin-right: 8em
-            font-weight: 700
-            display: none
-
-            @include breakpoint('medium')
-                display: block 
-
-        button
-            color: var(--yellow)
-            background-color: black
-            padding: 1em 2em
-            border: none
-            cursor: pointer
-            display: block
-
-            @include breakpoint('medium')
-                font-size: 1.5rem
-                padding: 1em 5.5em
-
-
-            span
-                font-size: 1.2rem
-
-            &::after
-                content: ''
-                margin-left: 1em
-                border-top: 2px solid var(--purple)
-                border-right: 2px solid var(--purple)
-                width: 20px
-                height: 10px
-                display: none
-
-                @include breakpoint('medium')
-                    display: inline-block
+    .half-arrow
+        width: 20px
 
     &__image-container
         flex-basis: 80%
         order: -1
-        background-image: url('/src/images/lp1-hero.jpg')
+        background-image: url('/src/images/lp1-hero-1920_1200.jpg')
         background-size: cover
         min-height: 30vh
         margin-bottom: 2em
+        position: relative
 
         @include breakpoint('medium')
             order: 1
             min-height: 80vh
             margin-bottom: 0
-    
+
+    .signup-button
+        color: var(--yellow)
+        background-color: black
+        padding: 1em 2em
+        border: none
+        cursor: pointer
+        display: block
+        position: absolute
+        bottom: 0
+        left: 50%
+        white-space: nowrap
+        transform: translate(-50%, 50%)
+
+        @include breakpoint('medium')
+            left: auto
+            transform: translate(-50%, 0)
+            font-size: 1.5rem
+            padding: 1em 5.5em
+
+        span
+            font-size: 1.2rem
+            margin-right: 1em
+
     &__form-wrapper
         padding: 0 2em
         display: flex
@@ -92,7 +67,7 @@ body
     input, &__collect-button
         width: 250px
         height: 45px
-    
+
     input
         display: block
         margin: 0 auto
@@ -112,7 +87,7 @@ body
     &__title
         margin-bottom: .2em
         font-size: 2.1rem
-    
+
     &__price
         color: var(--purple)
         font-size: 3rem

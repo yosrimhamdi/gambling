@@ -9,18 +9,18 @@ body
     font-family: 'TT Norms Pro', sans-serif
 
 .content
-    background-image: url('/src/images/lp4-hero.jpg')
+    background-image: url('/src/images/lp4-hero-1920_1270.jpg')
     background-size: cover
-    background-position: 30% 10%
+    background-position: center
     background-repeat: no-repeat
     position: relative
+    border-top: 1px solid transparent
 
     @include breakpoint('small')
         height: 100vh
-        
+
     @include breakpoint('medium')
         background-position: center
-
 
 .hero-section
     width: 90%
@@ -51,14 +51,13 @@ body
             position: absolute
             top: 50%
             left: 50%
-            transform: translate(-50%, -50%)    
-
+            transform: translate(-50%, -50%)
 
     input, &__collect-button
         width: 250px
         height: 45px
         border-radius: 5px
-    
+
     input
         display: block
         margin: 0 auto
@@ -80,11 +79,11 @@ body
         border-radius: 4px
         display: inline-flex
         align-items: center
-        justify-content: center 
+        justify-content: center
 
     &__title
         margin-bottom: .2em
-    
+
     &__price
         color: var(--lp-4)
         font-size: 3rem
@@ -99,7 +98,6 @@ body
         margin-bottom: 1em
         font-size: 1.9rem
         white-space: nowrap
-
 
 .items
     color: white
@@ -172,7 +170,7 @@ body
         margin: 0 auto
         margin-bottom: 2.3em
         width: 90%
-    
+
     button
         color: var(--red)
         border: none
@@ -183,7 +181,7 @@ body
         margin-bottom: 2rem
         cursor: pointer
         color: white
-    
+
     &__radios
         margin: 0 auto
         color: #745A5A
@@ -206,4 +204,3 @@ body
             cursor: pointer
             top: 5px
             margin-right: 2em
-    
