@@ -1,6 +1,8 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -12,21 +14,22 @@ module.exports = {
   },
   output: {
     path: __dirname + '/dist/',
+    filename: '[name].js',
   },
-  mode: process.env.NODE_ENV,
   plugins: [
+    new RemoveEmptyScriptsPlugin(),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
-    // ...[1, 2, 3, 4].map(
-    //   i =>
-    //     new HtmlWebpackPlugin({
-    //       template: `src/html/landing-page-${i}.html`,
-    //       filename: `landing-pages/landing-page-${i}.html`,
-    //       inject: false,
-    //     })
-    // ),
+    ...[1, 2, 3, 4].map(
+      i =>
+        new HtmlWebpackPlugin({
+          template: `src/html/landing-page-${i}.html`,
+          filename: `landing-page-${i}.html`,
+          inject: false,
+        })
+    ),
   ],
   module: {
     rules: [
@@ -44,37 +47,19 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
-      // {
-      //   test: /\.html$/i,
-      //   use: 'html-loader',
-      // },
-      // {
-      //   test: /\.(png|jpg|svg)$/i,
-      //   type: 'asset/resource',
-      //   use: [
-      //     {
-      //       loader: 'image-webpack-loader',
-      //       options: {
-      //         pngquant: {
-      //           quality: [0.9, 0.95],
-      //         },
-      //       },
-      //     },
-      //   ],
-      //   parser: {
-      //     dataUrlCondition: {
-      //       maxSize: 10 * 1024,
-      //     },
-      //   },
-      //   generator: {
-      //     filename: 'images/[name]-[hash][ext]',
-      //   },
-      // },
+      {
+        test: /\.html$/i,
+        use: 'html-loader',
+      },
     ],
   },
-  devServer: {
-    devMiddleware: {
-      writeToDisk: true,
-    },
+  optimization: {
+    minimizer: [
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.sharpMinify,
+        },
+      }),
+    ],
   },
 };
