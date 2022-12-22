@@ -9,25 +9,29 @@ body
     font-family: 'TT Norms Pro', sans-serif
 
 .container
-    background-image: url('/src/images/lp3-hero-1920_1200.jpg')
+    background-image: url('/src/images/lp3-hero-mobile.jpg')
     background-size: cover
     background-position: 30% 10%
     background-repeat: no-repeat
     border-top: 1px solid transparent
+    min-height: 100vh
+    display: flex
+    align-content: center
+    align-items: center
 
-    @include breakpoint('small')
-        min-height: 100vh
+    @include breakpoint('medium')
+        background-image: url('/src/images/lp3-hero-1920_1200.jpg')
         background-position: center
 
 .hero-section
-    background-color: #fff
+    background-color: rgb(255, 255, 255, .8)
+    border-radius: 20px
     width: 90%
     margin: 0 auto
     padding: 2em 0
-    margin-bottom: 2em
-    margin-top: 2em
 
     @include breakpoint('small')
+        background-color: rgb(255, 255, 255)
         position: absolute
         top: 40%
         left: 50%
@@ -52,14 +56,13 @@ body
             position: absolute
             top: 50%
             left: 50%
-            transform: translate(-50%, -50%)    
-
+            transform: translate(-50%, -50%)
 
     input, &__collect-button
         width: 250px
         height: 45px
         border-radius: 5px
-    
+
     input
         display: block
         margin: 0 auto
@@ -80,13 +83,13 @@ body
         border-radius: 20px
         display: inline-flex
         align-items: center
-        justify-content: center 
+        justify-content: center
 
     &__title
         margin-bottom: .2em
         font-size: 1rem
         font-weight: 400
-    
+
     &__price
         color: var(--red)
         font-size: 3rem
@@ -102,7 +105,6 @@ body
         font-size: 1.9rem
         white-space: nowrap
 
-
 .items
     color: white
     width: 100%
@@ -110,7 +112,7 @@ body
     align-items: center
     justify-content: flex-start
     gap: 2em
-    background-color: rgba(177, 15, 45, 0.6)
+    background-color: rgba(177, 15, 45)
     padding: .5em 1em
     flex-wrap: wrap
 
@@ -136,6 +138,7 @@ body
     border-radius: 10px
     padding: 2em 1em
     margin-bottom: 2em
+    position: relative
 
     @include breakpoint('small')
         position: absolute
@@ -171,13 +174,13 @@ body
         border: none
         outline: none
         padding: 1.4em 2em
-        border-radius:  20px
+        border-radius: 20px
         margin-bottom: 2.5em
         width: 100%
 
         @include breakpoint('laptop')
             max-width: 600px
-    
+
     button
         color: var(--red)
         border: none
@@ -188,7 +191,7 @@ body
         border-radius: 15px
         margin-bottom: 2rem
         cursor: pointer
-    
+
     &__radios
         margin: 0 auto
 
@@ -209,4 +212,3 @@ body
             cursor: pointer
             top: 5px
             margin-right: 2em
-    
