@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  open: '/landing-page-1.html',
   outer: {
     mode: process.env.NODE_ENV,
     entry: {
@@ -10,7 +11,6 @@ module.exports = {
       'landing-page-4': '/src/entries/landing-page-4.js',
     },
   },
-  open: '/landing-page-1.html',
   templates: [
     ...[1, 2, 3, 4].map(
       i =>
