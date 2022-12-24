@@ -4,6 +4,7 @@ module.exports = {
   devServer: {
     compress: true,
     port: 3000,
+    open,
     hot: true,
   },
   ...outer,
