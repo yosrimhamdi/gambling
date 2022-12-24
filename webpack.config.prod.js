@@ -1,13 +1,12 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
-const commonWebpackConfig = require('./webpack.config.common');
+const { outer, plugins } = require('./webpack.config.common');
 
 module.exports = {
-  ...commonWebpackConfig,
+  ...outer,
   output: {
     path: __dirname + '/dist/',
     filename: 'js/[name].js',
@@ -18,15 +17,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',
     }),
-    ...[1, 2, 3, 4].map(
-      i =>
-        new HtmlWebpackPlugin({
-          template: `src/html/landing-page-${i}.html`,
-          filename: `html/landing-page-${i}.html`,
-          chunks: [`landing-page-${i}`],
-          inject: true,
-        })
-    ),
+    ...plugins,
   ],
   module: {
     rules: [

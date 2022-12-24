@@ -1,20 +1,14 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
-const commonWebpackConfig = require('./webpack.config.common');
+const { outer, plugins } = require('./webpack.config.common');
 
 module.exports = {
-  ...commonWebpackConfig,
-  plugins: [
-    ...[1, 2, 3, 4].map(
-      i =>
-        new HtmlWebpackPlugin({
-          template: `src/html/landing-page-${i}.html`,
-          filename: `landing-page-${i}.html`,
-          chunks: [`landing-page-${i}`],
-          inject: true,
-        })
-    ),
-  ],
+  devServer: {
+    compress: true,
+    port: 3000,
+    open: '/landing-page-1.html',
+    hot: true,
+  },
+  ...outer,
+  plugins: [...plugins],
   module: {
     rules: [
       {
@@ -36,11 +30,5 @@ module.exports = {
         use: 'html-loader',
       },
     ],
-  },
-  devServer: {
-    compress: true,
-    port: 3000,
-    open: '/landing-page-1.html',
-    hot: true,
   },
 };
