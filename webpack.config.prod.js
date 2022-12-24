@@ -39,6 +39,13 @@ module.exports = {
         test: /\.html$/i,
         use: 'html-loader',
       },
+      {
+        test: /\.(png|jpg|svg)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name][ext]',
+        },
+      },
     ],
   },
   optimization: {
