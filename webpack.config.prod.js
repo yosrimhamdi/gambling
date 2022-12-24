@@ -4,20 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
+const commonWebpackConfig = require('./webpack.config.common');
+
 module.exports = {
-  entry: {
-    'landing-page-1': '/src/sass/landing-page-1.sass',
-    'landing-page-2': '/src/sass/landing-page-2.sass',
-    'landing-page-3': [
-      '/src/sass/landing-page-3.sass',
-      '/src/js/toggle-popup.js',
-    ],
-    'landing-page-4': [
-      '/src/sass/landing-page-4.sass',
-      '/src/js/toggle-popup.js',
-    ],
-  },
-  mode: 'production',
+  ...commonWebpackConfig,
   output: {
     path: __dirname + '/dist/',
     filename: 'js/[name].js',

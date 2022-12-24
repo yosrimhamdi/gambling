@@ -1,26 +1,10 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+const commonWebpackConfig = require('./webpack.config.common');
 
 module.exports = {
-  entry: {
-    'landing-page-1': '/src/sass/landing-page-1.sass',
-    'landing-page-2': '/src/sass/landing-page-2.sass',
-    'landing-page-3': [
-      '/src/sass/landing-page-3.sass',
-      '/src/js/toggle-popup.js',
-    ],
-    'landing-page-4': [
-      '/src/sass/landing-page-4.sass',
-      '/src/js/toggle-popup.js',
-    ],
-  },
-  mode: 'development',
-  output: {
-    path: __dirname + '/dist/',
-  },
+  ...commonWebpackConfig,
   plugins: [
-    new CleanWebpackPlugin(),
     ...[1, 2, 3, 4].map(
       i =>
         new HtmlWebpackPlugin({
