@@ -16,9 +16,6 @@ module.exports = {
     ],
   },
   mode: 'development',
-  output: {
-    path: __dirname + '/dist/',
-  },
   plugins: [
     new CleanWebpackPlugin(),
     ...[1, 2, 3, 4].map(
@@ -54,9 +51,6 @@ module.exports = {
     ],
   },
   devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist'),
-    },
     compress: true,
     port: 3000,
     open: '/landing-page-1.html',
