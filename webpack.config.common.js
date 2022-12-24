@@ -10,6 +10,7 @@ module.exports = {
       'landing-page-4': '/src/entries/landing-page-4.js',
     },
   },
+  open: '/landing-page-1.html',
   templates: [
     ...[1, 2, 3, 4].map(
       i =>
