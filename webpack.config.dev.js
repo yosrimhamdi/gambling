@@ -16,6 +16,9 @@ module.exports = {
     ],
   },
   mode: 'development',
+  output: {
+    path: __dirname + '/dist/',
+  },
   plugins: [
     new CleanWebpackPlugin(),
     ...[1, 2, 3, 4].map(
