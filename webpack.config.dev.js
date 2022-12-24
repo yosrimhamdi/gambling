@@ -1,33 +1,33 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
-const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
     'landing-page-1': '/src/sass/landing-page-1.sass',
     'landing-page-2': '/src/sass/landing-page-2.sass',
-    'landing-page-3': '/src/sass/landing-page-3.sass',
-    'landing-page-4': '/src/sass/landing-page-4.sass',
-    'toggle-popup': '/src/js/toggle-popup.js',
+    'landing-page-3': [
+      '/src/sass/landing-page-3.sass',
+      '/src/js/toggle-popup.js',
+    ],
+    'landing-page-4': [
+      '/src/sass/landing-page-4.sass',
+      '/src/js/toggle-popup.js',
+    ],
   },
+  mode: 'development',
   output: {
     path: __dirname + '/dist/',
-    filename: '[name].js',
   },
   plugins: [
-    new RemoveEmptyScriptsPlugin(),
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-    }),
     ...[1, 2, 3, 4].map(
       i =>
         new HtmlWebpackPlugin({
           template: `src/html/landing-page-${i}.html`,
           filename: `landing-page-${i}.html`,
-          inject: false,
+          chunks: [`landing-page-${i}`],
+          inject: true,
         })
     ),
   ],
@@ -45,7 +45,7 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.html$/i,
@@ -53,13 +53,13 @@ module.exports = {
       },
     ],
   },
-  optimization: {
-    minimizer: [
-      new ImageMinimizerPlugin({
-        minimizer: {
-          implementation: ImageMinimizerPlugin.sharpMinify,
-        },
-      }),
-    ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    compress: true,
+    port: 3000,
+    open: '/landing-page-1.html',
+    hot: true,
   },
 };
