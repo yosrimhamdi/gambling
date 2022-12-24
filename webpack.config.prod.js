@@ -1,7 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
-const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 const { outer, plugins } = require('./webpack.config.common');
 
@@ -39,22 +38,6 @@ module.exports = {
         test: /\.html$/i,
         use: 'html-loader',
       },
-      {
-        test: /\.(png|jpg|svg)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: 'images/[name][ext]',
-        },
-      },
-    ],
-  },
-  optimization: {
-    minimizer: [
-      new ImageMinimizerPlugin({
-        minimizer: {
-          implementation: ImageMinimizerPlugin.sharpMinify,
-        },
-      }),
     ],
   },
 };
