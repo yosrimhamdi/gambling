@@ -1,4 +1,4 @@
-const { outer, plugins } = require('./webpack.config.common');
+const { outer, templates } = require('./webpack.config.common');
 
 module.exports = {
   devServer: {
@@ -8,7 +8,7 @@ module.exports = {
     hot: true,
   },
   ...outer,
-  plugins: [...plugins],
+  plugins: [...templates],
   module: {
     rules: [
       {

@@ -10,7 +10,7 @@ module.exports = {
       'landing-page-4': '/src/entries/landing-page-4.js',
     },
   },
-  plugins: [
+  templates: [
     ...[1, 2, 3, 4].map(
       i =>
         new HtmlWebpackPlugin({

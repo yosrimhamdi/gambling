@@ -2,7 +2,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 
-const { outer, plugins } = require('./webpack.config.common');
+const { outer, templates } = require('./webpack.config.common');
 
 module.exports = {
   ...outer,
@@ -16,7 +16,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',
     }),
-    ...plugins,
+    ...templates,
   ],
   module: {
     rules: [
