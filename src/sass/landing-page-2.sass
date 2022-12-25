@@ -1,5 +1,6 @@
 @use './utils/breakpoint' as *
 @forward './index'
+@forward './components/icons'
 
 body
     font-family: 'Roboto', monospace
@@ -16,10 +17,6 @@ body
     @include breakpoint('medium')
         height: 100vh
         flex-direction: row
-
-    img
-        display: blocks
-        width: 100%
 
     &__image-container
         flex-basis: 90%
@@ -40,9 +37,6 @@ body
 
     &__form-wrapper
         padding: 0 2em
-        display: flex
-        align-items: center
-        justify-content: center
         text-align: center
 
     input, &__collect-button

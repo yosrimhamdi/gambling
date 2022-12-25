@@ -6,6 +6,7 @@ module.exports = {
     port: 3000,
     open,
     hot: true,
+    watchFiles: './src/html/*.html',
   },
   ...outer,
   plugins: [...plugins],

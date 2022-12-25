@@ -1,0 +1,23 @@
+@use '../utils/breakpoint' as *
+
+.icons
+    color: red
+    display: flex
+    justify-content: center
+    padding-top: 2em
+    padding-bottom: 2em
+
+    @include breakpoint('medium')
+        justify-content: flex-start
+        padding-bottom: 5.5em
+
+    .c888
+        height: 60px
+        transform: translateY(-16%)
+
+    .rg
+        height: 35px
+
+    img
+        margin-right: 1.5em
+        height: 30px
