@@ -31,6 +31,9 @@ module.exports = {
           filename: `landing-page-${i}.html`,
           chunks: [`landing-page-${i}`],
           inject: true,
+          minify: {
+            removeRedundantAttributes: false,
+          },
         })
     ),
   ],
