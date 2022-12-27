@@ -10,6 +10,18 @@
 
     $scale: 1.25
 
+    &--to-left
+        justify-content: flex-start
+        margin-left: 0
+        img:not(:last-child)
+            margin-right: .2em !important
+
+        @include breakpoint('medium')
+            margin-left: 35px
+
+            img:not(:last-child)
+                margin-right: 1.5em !important
+
     &--attached
         position: absolute
         top: 0
