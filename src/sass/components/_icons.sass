@@ -1,27 +1,41 @@
 @use '../utils/breakpoint' as *
 
 .icons
-    color: red
     display: flex
     justify-content: center
-    padding-top: 1em
-    padding-bottom: 1em
+    margin-bottom: 1em
 
     @include breakpoint('medium')
-        justify-content: flex-start
-        padding-top: 2em
-        padding-bottom: 5.5em
+        margin-bottom: 2em
+
+    $scale: 1.25
+
+    &--attached
+        position: absolute
+        top: 0
+        left: 0
+        padding: 1em 2em
+        text-align: center
+
+        width: 100%
+
+        @include breakpoint('medium')
+            width: auto
 
     .c888
-        height: 60px
-        transform: translateY(-16%)
+        height: calc(47px * $scale)
 
     .rg
-        height: 35px
+        height: calc(49px * $scale)
 
     .us
-        height: 32px
+        height: calc(44px * $scale)
 
-    img
+    .wynnbet-white
+        height: calc(30px * $scale)
+
+    .wynnbet-black
+        height: calc(45px * $scale)
+
+    img:not(:last-child)
         margin-right: 1.5em
-        height: 30px

@@ -22,7 +22,7 @@ body
         background-image: url('/src/images/lp1-hero-1920_1200.jpg')
         background-size: cover
         min-height: 30vh
-        margin-bottom: 2em
+        margin-bottom: 3em
         position: relative
 
         @include breakpoint('medium')
@@ -56,6 +56,9 @@ body
     &__form-wrapper
         padding: 0 2em
         text-align: center
+        display: flex
+        flex-direction: column
+        justify-content: center
 
     input, &__collect-button
         width: 250px
