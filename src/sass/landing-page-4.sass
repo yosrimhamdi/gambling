@@ -43,8 +43,6 @@ body
         padding: 2em
         display: flex
         flex-direction: column
-        // align-items: center
-        // justify-content: center
         text-align: center
         position: absolute
         top: 50%
@@ -85,6 +83,9 @@ body
         display: inline-flex
         align-items: center
         justify-content: center
+
+        @include breakpoint('medium')
+            padding: 1.7rem 5em
 
     &__title
         margin-bottom: .2em
@@ -151,9 +152,6 @@ body
 
     @include breakpoint('laptop')
         width: 600px
-
-    label
-        // cursor: pointer
 
     .fa-xmark
         font-size: 1.5rem
